@@ -34,18 +34,29 @@ whatYouWillLearn:
         type:Number,
 
     },
-    thumbail:{
+    thumbnail:{
         type:String,
     },
     tag:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Tag",
     },
+    category:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Category",
+    },
     studentsEnrolled:[{
         type:mongoose.Schema.Types.ObjectId,
         required:true,
         ref:"User",
-    }]
+    }],
+    instruction:{
+        type:[String],
+    },
+    status:{
+        type:String,
+        enum:["Draft","Published"]
+    }
 
 
     
