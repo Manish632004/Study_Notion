@@ -1,4 +1,3 @@
-
 const mongoose = require("mongoose");
 
 const sectionSchema = new mongoose.Schema({
@@ -8,7 +7,7 @@ const sectionSchema = new mongoose.Schema({
         // required:true
     },
     subSection:[{
-        type:mongoose.Schema.Types.ObjecId,
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
         ref:"SubSection",
     }]

@@ -1,4 +1,4 @@
-const mongoose = rquire("mongoose");
+const mongoose = require("mongoose");
 
 const ratingAndReview  = new mongoose.Schema({
 
@@ -12,7 +12,7 @@ const ratingAndReview  = new mongoose.Schema({
         required:true,
     },
     review:{
-        tyep:String,
+        type:String,
         required:true
     },
     course:{

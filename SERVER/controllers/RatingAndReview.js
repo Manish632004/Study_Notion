@@ -1,5 +1,6 @@
-const RatingAndReview = required("../models/RatingAndReview");
-const Course = required("../models/Course");
+const RatingAndReview = require("../models/RatingAndReview");
+const Course = require("../models/Course");
+const mongoose = require("mongoose");
 
 // create Rating
 
@@ -67,7 +68,7 @@ exports.createRating = async(req,res)=>{
 }
 
 //  getAverage Rating 
-exports.averageRating = async(req,res)=>{
+exports.getAverageRating = async(req,res)=>{
     try {
         // get course Id
         const courseId = req.body.courseId;
@@ -98,7 +99,7 @@ exports.averageRating = async(req,res)=>{
         //if no rating / review exit '
         return res.status(200).json({
             success:true,
-            messsage:"Average Rating is 0 , no rating s given till now",
+            message:"Average Rating is 0 , no rating s given till now",
             averageRating:0
 
         })        

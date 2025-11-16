@@ -1,7 +1,7 @@
-
 const User = require("../models/User");
 const mailSender = require("../utils/mailSender");
 const bcrypt = require("bcrypt")
+const crypto = require("crypto");
 
 //resetPasswordToken
 exports.resetPasswordToken = async (req,res)=>{
@@ -15,7 +15,7 @@ exports.resetPasswordToken = async (req,res)=>{
     const user = await User.findOne({email:email});
     if(!user){
         return res.json({success:false,
-            messag:"Your Email is not registered with us"
+            message:"Your Email is not registered with us"
         })
     }
 

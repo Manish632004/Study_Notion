@@ -4,12 +4,12 @@ const profileSchema = new mongoose.Schema({
 
     gender:{
         type:String,
-        enum:["Male","Female","Other"],
-        required:true
+        // enum:["Male","Female","Other"],
+        // required:true
     },
     dateOfBirth:{
         type:Date,
-        required:true
+        // required:true
     },
     about:{
         type:String,

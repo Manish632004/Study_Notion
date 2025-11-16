@@ -8,7 +8,7 @@ const User = require("../models/User")
 exports.auth = async(req,res,next)=>{
     try{
         //extract token 
-        const token = req.cookie.token ||req.body.token || req.header("Authorization").replace("Bearer ","");
+        const token = req.cookies.token ||req.body.token || req.header("Authorization").replace("Bearer ","");
         
         // if token missing , then return response
         if(!token){
