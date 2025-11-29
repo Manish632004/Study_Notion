@@ -33,7 +33,7 @@ exports.auth = async(req,res,next)=>{
             })
         }
         next();
-        
+    
 
     }catch(error){
         console.log(error);

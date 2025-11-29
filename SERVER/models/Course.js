@@ -1,65 +1,65 @@
-const mongoose  = require("mongoose");
+const mongoose = require("mongoose");
 
 const courseSchema = new mongoose.Schema({
 
-    courseName:{
-        type:String,
-        required:true,
-        trim:true,
+    courseName: {
+        type: String,
+        required: true,
+        trim: true,
     },
-    courseDescription:{
-        type:String,
-        required:true,
-        trim:true,
+    courseDescription: {
+        type: String,
+        required: true,
+        trim: true,
     },
-    instructor:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
-        required:true
+    instructor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     },
-whatYouWillLearn:
+    whatYouWillLearn:
     {
-        type:String,
-        trim:true,
+        type: String,
+        trim: true,
     },
-    courseContent:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Section",
+    courseContent: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Section",
     }],
-    ratingAndReviews:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"RatingAndReview",
+    ratingAndReviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "RatingAndReview",
     }],
-    price:{
-        type:Number,
+    price: {
+        type: Number,
 
     },
-    thumbnail:{
-        type:String,
+    thumbnail: {
+        type: String,
     },
-    tag:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Tag",
+    tag: {
+        type: [String],
+        required: true,
     },
-    category:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Category",
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
     },
-    studentsEnrolled:[{
-        type:mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:"User",
+    studentsEnrolled: [{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "User",
     }],
-    instruction:{
-        type:[String],
+    instruction: {
+        type: [String],
     },
-    status:{
-        type:String,
-        enum:["Draft","Published"]
+    status: {
+        type: String,
+        enum: ["Draft", "Published"]
     }
 
 
-    
+
 });
 
-module.exports = mongoose.model("Course",courseSchema);
+module.exports = mongoose.model("Course", courseSchema);

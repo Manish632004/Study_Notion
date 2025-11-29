@@ -66,7 +66,7 @@ exports.deleteAccount = async (req, res) => {
             })
         }
 
-        // delete profile
+        // Delete Assosiate Profile with the user 
         await Profile.findByIdAndDelete({ _id: userDetails.additionalDetails });
 
         // todo :HW unenroll user from all enrolled courses 
@@ -91,15 +91,22 @@ exports.deleteAccount = async (req, res) => {
 // Get all user details
 exports.getAllUserDetails = async (req, res) => {
     try {
-        const id = req.user.id;
-        const userDetails = await User.findById(id);
-        if (!userDetails) {
-            return res.status(404).json({ success: false, message: "User not found" });
+            const id = req.user.id;
+            const userDetails = await User.findById(id)
+                .populate("additionalDetails")
+                .exec();
+            console.log(userDetails);
+            res.status(200).json({
+                success: true,
+                message: "User Data fetched successfully",
+                data: userDetails,
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                message: error.message,
+            });
         }
-        return res.status(200).json({ success: true, data: userDetails });
-    } catch (error) {
-        return res.status(500).json({ success: false, message: "Failed to fetch user details", error: error.message });
-    }
 }
 
 // Get Enrolled Courses (stub)

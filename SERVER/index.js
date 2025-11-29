@@ -12,7 +12,7 @@ const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const {cloudinaryConnect }= require("./config/cloudinary");
-const fileUpload = require("file-upload");
+const fileUpload = require("express-fileupload");
 //data base connect 
 database.connect();
 
@@ -25,6 +25,14 @@ app.use(
         credentials:true,
     })
 )
+// enable multipart/form-data parsing
+app.use(
+    fileUpload({
+        useTempFiles: true,
+        tempFileDir: "/tmp/",
+        // createParentPath: true,
+    })
+);
 
 // cloudinary connection 
 cloudinaryConnect();
