@@ -95,6 +95,7 @@ exports.deleteSection = async(req,res)=>{
         const {sectionId} = req.params
         // user findByIdandDelete
         await Section.findByIdAndDelete(sectionId);
+        // course ko bhi update karo 
         // Todo : do we need to delete the entry from the course entry 
         //return response
         return res.status(200).json({
