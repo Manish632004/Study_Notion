@@ -5,3 +5,8 @@
 html,body{
     overflow-x: hidden;
 }
+.homepage_bg{
+    background-image: url('../src/assets/Images/bghome.svg');
+    /* background-size: cover;
+    background-position: center; */
+}
