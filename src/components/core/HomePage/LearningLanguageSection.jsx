@@ -7,7 +7,7 @@ import CTAButton from "../HomePage/Button";
 
 const LearningLanguageSection = () => {
   return (
-    <div className="mt-[150px]">
+    <div className="mt-[150px] mb-28">
       <div className="flex flex-col gap-5 items-center">
         <div className="text-4xl font-semibold text-center">
             Your Swiss Knife for 

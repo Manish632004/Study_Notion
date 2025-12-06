@@ -56,9 +56,7 @@ export const HomePageExplore = [
             },
             {
                 heading : "Python",
-                description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
-                level : 'Beginner',
-                lessionNumber : 6
+                description : "This course explores advanced topics in python and oops and other python frameworks like django",
             },
             {
                 heading : "SCSS",
@@ -74,19 +72,19 @@ export const HomePageExplore = [
             {
                 heading : "Flask",
                 description : "This course covers the basic concepts of HTML including creating and structuring web pages, adding text, links, images, and more.",
-                level : 'Beginner',
+                level : 'Intermediate',
                 lessionNumber : 6
             },
             {
                 heading : "Django",
                 description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
-                level : 'Beginner',
+                level : 'Advance',
                 lessionNumber : 6
             },
             {
                 heading : "Fast API",
                 description : "This course teaches responsive web design techniques, allowing web pages to adapt to different devices and screen sizes",
-                level : 'Beginner',
+                level : 'Intermediate',
                 lessionNumber : 6
             },
         ]
@@ -103,13 +101,13 @@ export const HomePageExplore = [
             {
                 heading : "Nuxt.js",
                 description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
-                level : 'Beginner',
+                level : 'Intermediate',
                 lessionNumber : 6
             },
             {
                 heading : "Sanity",
                 description : "This course teaches responsive web design techniques, allowing web pages to adapt to different devices and screen sizes",
-                level : 'Beginner',
+                level : 'Advance',
                 lessionNumber : 6
             },
         ]

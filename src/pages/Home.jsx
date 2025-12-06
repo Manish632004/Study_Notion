@@ -7,6 +7,9 @@ import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "../components/core/HomePage/CodeBlocks";
 import TimelineSection from "../components/core/HomePage/TimelineSection";
 import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection";
+import InstructorSection from "../components/core/HomePage/InstructorSection";
+import ExploreMore from "../components/core/HomePage/ExploreMore";
+import Footer from "../components/core/HomePage/common/Footer"
 
 const Home = () => {
     return <div>
@@ -42,8 +45,9 @@ const Home = () => {
                     height:"auto",
                     boxShadow:"15px 15px 0px 0px rgba(255, 255, 255, 1)"
                 }}
+                src={Banner}
                 >
-                <source src={Banner} type="video/mp4"/>
+                {/* <source src={Banner} type="video/mp4"/> */}
 
                 </video>
             </div>
@@ -132,6 +136,7 @@ const Home = () => {
             codeColor={"text-yellow-25"}
             
             />
+            <ExploreMore/>
         </div>
 
 
@@ -187,8 +192,16 @@ const Home = () => {
         
 
         {/* Section 3 */}
+        <div className="w-11/12 mx-auto max-w-maxContent flex flex-col items-center justify-between gap-8 bg-richblue-900 text-white">
+            <InstructorSection/>
+            <h2 className="text-center text-4xl font-semibold mt-10">
+                Reviews from other learner
+            </h2>
+            <div></div>
+        </div>
         
         {/* Footer */}
+        <Footer/>
     </div>;
 };
 
