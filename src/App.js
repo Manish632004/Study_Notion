@@ -40,6 +40,11 @@ function App() {
             <UpdatePassword/>
           </OpenRoute>
         }/>
+      <Route path="verify-email" element={
+          <OpenRoute>
+            <VerifyEmail/>
+          </OpenRoute>
+        }/>
     
         {/* <Route path="/signup" element={<Signup/>}/> */}
         {/* <Route path="/login" element={<Login/>}/> */}
