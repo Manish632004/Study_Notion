@@ -3,6 +3,7 @@ import {Route,Routes} from "react-router-dom";
 import  Home from "./pages/Home";
 import Navbar from "./components/common/Navbar"
 import ForgotPassword from "./pages/ForgotPassword";
+import About from "./pages/About";
 // import Signup from "./pages/Signup";
 // import Login from "./pages/Login"
 
@@ -43,6 +44,11 @@ function App() {
       <Route path="verify-email" element={
           <OpenRoute>
             <VerifyEmail/>
+          </OpenRoute>
+        }/> 
+        <Route path="about" element={
+          <OpenRoute>
+            <About/>
           </OpenRoute>
         }/>
     

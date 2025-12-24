@@ -63,7 +63,7 @@ return (
                     <Link to="/login">
                     <p>Back to Login</p></Link>
                 </div>
-                <button onClick={ ()=> dispatch(sendOtp)}>
+                <button onClick={ ()=> dispatch(sendOtp(signupData.email,navigate))}>
                     Resend it
                 </button>
                 </div>
