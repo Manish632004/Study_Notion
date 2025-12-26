@@ -78,6 +78,16 @@ const About = () => {
         <ContactFormSection/>
       </section>
 
+      <section>
+        <div>
+          Reviews from other learners
+          <ReviewSlider/>
+
+        </div>
+      </section>
+
+      {/* <Footer/> */}
+
     </div>
   )
 }

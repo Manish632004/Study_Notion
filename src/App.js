@@ -4,6 +4,8 @@ import  Home from "./pages/Home";
 import Navbar from "./components/common/Navbar"
 import ForgotPassword from "./pages/ForgotPassword";
 import About from "./pages/About";
+import { Outlet } from "react-router-dom";
+import MyProfile from "./components/core/Dashboard/MyProfile";
 // import Signup from "./pages/Signup";
 // import Login from "./pages/Login"
 
@@ -51,9 +53,17 @@ function App() {
             <About/>
           </OpenRoute>
         }/>
+
+        {/* about ka route  */}
+        <Route path="/contact" element={<Contact/>}/>
     
         {/* <Route path="/signup" element={<Signup/>}/> */}
         {/* <Route path="/login" element={<Login/>}/> */}
+        
+        {/* dashboard ka route  */}
+
+
+        <Route path="dashboard/my-profile" element={<Dashboard/>}/>
 
       </Routes>
 
