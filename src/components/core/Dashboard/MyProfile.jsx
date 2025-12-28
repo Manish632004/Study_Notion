@@ -9,6 +9,8 @@ const MyProfile = () => {
   return (
     <div className='text-white'>
       <h1>My Profile</h1>
+
+      {/* section 1  */}
       <div>
         <div>
             <img src={user?.image} alt={`profile-${user?.firstName}`}
@@ -25,6 +27,63 @@ const MyProfile = () => {
                 navigate("/dashboard/settings")
             }}/>
       </div>
+
+      {/* section 2  */}
+
+      <div>
+        <div>
+            <p>About</p>
+            <IconBtn
+            text="Edit"
+            onClick={()=>{
+                navigate("/dashboard/settings")
+            }}/>
+        </div>
+        <p>{user?.additionalDetails?.about ?? "Write Something about Yourself"}</p>
+      </div>
+
+      {/* section 3 */}
+      <div>
+        <div>
+            <p>Personal Details</p>
+            <IconBtn
+            text="Edit"
+            onClick={()=>{
+                navigate("/dashboard/settings")
+            }}/>
+            
+        </div>
+        <div>
+            <div>
+                <p>First Name</p>
+                <p>{user?.firstName}</p>
+            </div>
+            <div>
+                <p>Email</p>
+                <p>{user?.email}</p>
+            </div>
+            <div>
+                <p>Gender</p>
+                <p>{user?.additionalDetails?.gender ?? "Add Gender"}</p>
+            </div>
+            <div>
+                <p>Last Name</p>
+                <p>{user?.lastName}</p>
+            </div> 
+            <div>
+                <p>Phone Number</p>
+                <p>{user?.additionalDetails?.contactNumber ?? "Add Contact Number"}</p>
+            </div>
+            <div>
+                <p>Date of Birth</p>
+                <p>{user?.additionalDetails?.dateOfBirth ?? "Add Date of Birth"}</p>
+            </div>
+            
+
+        </div>
+      </div>
+
+
 
 
     </div>

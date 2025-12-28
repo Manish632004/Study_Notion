@@ -6,6 +6,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import About from "./pages/About";
 import { Outlet } from "react-router-dom";
 import MyProfile from "./components/core/Dashboard/MyProfile";
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
+import Error from "./pages/Error"
 // import Signup from "./pages/Signup";
 // import Login from "./pages/Login"
 
@@ -63,7 +65,16 @@ function App() {
         {/* dashboard ka route  */}
 
 
-        <Route path="dashboard/my-profile" element={<Dashboard/>}/>
+        
+
+        <Route path="dashboard/my-profile" element={<PrivateRoute>
+          <Dashboard/>
+        </PrivateRoute>}>
+          <Route path="dashboard/my-profile" element={<Dashboard/>}/>
+          <Route path="dashboard/settings" element={<Settings/>} />
+        </Route>
+
+        <Route path="*" element={<Error/>}/>
 
       </Routes>
 
