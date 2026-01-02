@@ -7,7 +7,8 @@ import About from "./pages/About";
 import { Outlet } from "react-router-dom";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
-import Error from "./pages/Error"
+import Error from "./pages/Error";
+import { ACCOUNT_TYPE } from "./components/utils/constants";
 // import Signup from "./pages/Signup";
 // import Login from "./pages/Login"
 
@@ -72,6 +73,16 @@ function App() {
         </PrivateRoute>}>
           <Route path="dashboard/my-profile" element={<Dashboard/>}/>
           <Route path="dashboard/settings" element={<Settings/>} />
+          
+          {
+            user?.accountType === ACCOUNT_TYPE.STUDENT &&(
+              <>
+              <Route path="dashboard/cart" element={<Cart/>} />
+          <Route path="dashboard/enrolled-courses" element={<EnrolledCourses/>} />
+              </>
+            )
+          }
+      
         </Route>
 
         <Route path="*" element={<Error/>}/>
