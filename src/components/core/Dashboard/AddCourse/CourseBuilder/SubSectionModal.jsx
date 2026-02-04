@@ -65,6 +65,7 @@ const SubSectionModal = ({
         return;
     }
     
+    // ADD DATA 
     const formData = new FormData();
     formData.append("sectionId",modalData);
     formData.append("title,data.lectureTitle");
@@ -77,8 +78,10 @@ const SubSectionModal = ({
     const result =await createSubSection(formData,token);
 
     if(result){
-        //todo: check for updation 
-        dispatch(setCourse(result));
+        const updatedCourseContent = course.courseContent.map((section)=>
+        section._id === modalData.sectionId ?result: section)
+        const updatedCourse = {...course, courseContent: updatedCourseContent};
+        dispatch(setCourse(updatedCourse));
     }
     setLoading(false);
     setModalData(null);

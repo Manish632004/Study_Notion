@@ -2,6 +2,7 @@ import React from 'react'
 import { FaCheck } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import CourseInformationForm from './CourseInformation/CourseInformationForm';
+import PublishCourse from "./PublishCourse "
 
 const RenderSteps = () => {
 
@@ -53,7 +54,7 @@ const RenderSteps = () => {
 
         {step===1 && <CouseInformationForm/>}
         {step===2 && <CouseBuilderForm/>}
-        {/* {step===3 && <PublishCourse/>} */}
+        {step===3 && <PublishCourse/>}
     </>
   )
 }

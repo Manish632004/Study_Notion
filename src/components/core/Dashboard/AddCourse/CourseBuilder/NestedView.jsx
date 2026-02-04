@@ -37,7 +37,10 @@ const NestedView = ({ handleChangeEditSectionName }) => {
     const result = async()=> await handleDeleteSubSection({subSectionId,sectionId,token});
     if(result){
         //todo :extra kya kar sakte ha yaha par
-        dispatch(setCourse(result))
+        const updatedCourseContent = course.courseContent.map((section)=>
+          section._id === sectionId ?result: section)
+        const updatedCourse = {...course, courseContent: updatedCourseContent};
+        dispatch(setCourse(updatedCourse))
     }
     setConfirmationModal(null);
   }
@@ -95,7 +98,9 @@ const NestedView = ({ handleChangeEditSectionName }) => {
                     <p>{data.title}</p>
                   </div>
 
-                  <div className="flex items-center gap-x-3">
+                  <div 
+                    onClick={(e)=>e.stopPropagation()}
+                    className="flex items-center gap-x-3">
                     <button
                     onClick={()=> setEditSubSection({...data,sectionId:section._id})}>
                         <MdEdit />
